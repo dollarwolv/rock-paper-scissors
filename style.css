@@ -1,11 +1,32 @@
-* { border: 1px solid black; }
-#image-container {
+/* * { border: 1px solid black; } */
+#image-rack {
     display: flex;
     position: relative;
     justify-content: space-evenly;
 }
 
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .game_img {
     position: relative;
-    height: 200px;
+    width: 250px;
+    height: 250px;
+}
+
+#scores {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.player-name {
+    margin-bottom: 50px;
 }
