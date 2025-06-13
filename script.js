@@ -50,8 +50,14 @@ function playRound(playerMove){
 
     if (winningConditions[playerMove] == computerMove){
         playerScore++;
+        document.getElementById("subheading").textContent="You Win!";
     } else if (winningConditions[computerMove] == playerMove){
         computerScore++;
+        document.getElementById("subheading").textContent="Computer Wins!";
+    }
+
+    else {
+        document.getElementById("subheading").textContent="Draw!"
     }
 
     document.getElementById("player-img").src=imageDict[playerMove];
@@ -71,6 +77,7 @@ allButtons.forEach(button => {
 
         isAnimating = true
         console.log(this.className + ' button was clicked!'); // 'this' refers to the button that was clicked
+        document.getElementById("subheading").textContent="Playing...";
         allButtons.forEach(btn => {
             btn.disabled = true;
             btn.style.opacity = '0.5'; 
@@ -86,7 +93,7 @@ allButtons.forEach(button => {
 
             allButtons.forEach(btn => {
             btn.disabled = false;
-            btn.style.opacity = '0.5'; 
+            btn.style.opacity = '1'; 
             });
         });
 
