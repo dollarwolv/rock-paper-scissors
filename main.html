@@ -8,23 +8,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
+    <div id="heading">
+        <h1>Rock Paper Scissors</h1>
+    </div>
     <div id="image-rack">
         <div class="image-container">
             <span class="player-name">You</span>
             <img src="img/fist.png" alt="Picture of a fist" class="game_img" id="player-img">
-            <span id="player-score">0</span>
+            <span id="player-score" class="scores">0</span>
         </div>
         <div class="image-container">
             <span class="player-name">The Evil Opponent</span>
             <img src="img/inv_fist.png" alt="Picture of the other fist" class="game_img" id="computer-img">
-            <span id="computer-score">0</span>
+            <span id="computer-score" class="scores">0</span>
         </div>
     </div>
     <div id="buttons">
         <button class="rock">Rock</button>
         <button class="paper">Paper</button>
         <button class="scissors">Scissors</button>
+    </div>
+    <div id="modal-bg">
+        <div id="modal-content">
+            <h2>Rock Paper Scissors</h2>
+            <p>Hi there! This is Rock Paper Scissors. This is my first project using HTML, CSS and JavaScript.</p>
+            <p>You know how this game works. Just press the buttons to play against the evil computer who is evil and trying to achieve world dominance. You need to stop him!</p>
+            <p>First to get to 5 points wins. Have fun!</p>
+            <span id="close-modal">X</span>
+        </div>
     </div>
 </body>
 </html>

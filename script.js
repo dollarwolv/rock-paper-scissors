@@ -92,3 +92,11 @@ allButtons.forEach(button => {
 
     });
 });
+
+
+let X = document.getElementById("close-modal");
+let modal = document.getElementById("modal-bg");
+X.addEventListener("click", function() {
+    modal.style.display = 'none';
+});
+
