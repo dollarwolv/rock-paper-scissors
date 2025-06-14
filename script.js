@@ -11,6 +11,8 @@ const imageDict = {
     "scissors" : "img/scissors.png"
 };
 
+const scoreToWin = 5;
+
 const X = document.getElementById("close-modal");
 const modal = document.getElementById("modal-bg");
 const modalContent = document.getElementById("modal-content");
@@ -82,12 +84,12 @@ function playRound(playerMove){
         document.getElementById("subheading").textContent="Draw!"
     }
 
-    if (playerScore >= 5 || computerScore >= 5){
+    if (playerScore >= scoreToWin || computerScore >= scoreToWin){
         modal.style.display = 'flex';
         modalContent.style.display = "none";
-        endScreen.style.display = "block";
+        endScreen.style.display = "flex";
 
-        if (playerScore >= 5){
+        if (playerScore >= scoreToWin){
             endScreenText.textContent = "You win! You saved the Earth. The Evil Computer will now die, and you can play another round against his evil twin."
         } else {
             endScreenText.textContent = "You lose. Everyone you love will perish. Wop wop."
