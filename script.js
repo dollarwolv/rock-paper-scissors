@@ -11,6 +11,28 @@ const imageDict = {
     "scissors" : "img/scissors.png"
 };
 
+const X = document.getElementById("close-modal");
+const modal = document.getElementById("modal-bg");
+const modalContent = document.getElementById("modal-content");
+const endScreen = document.getElementById("end-screen");
+const endScreenText = document.getElementById("end-screen-text");
+const playAgainButton = document.getElementById("play-again");
+
+X.addEventListener("click", function() {
+    modal.style.display = 'none';
+});
+
+playAgainButton.addEventListener("click", function () {
+    modal.style.display = 'none';
+    playerScore = 0;
+    computerScore = 0;
+    document.getElementById("player-img").src="img/fist.png";
+    document.getElementById("computer-img").src="img/inv_fist.png";
+    document.getElementById("subheading").textContent="Play another round!";
+    document.getElementById("player-score").textContent=playerScore;
+    document.getElementById("computer-score").textContent=computerScore;
+})
+
 var isAnimating = false;
 var playerScore = 0
 var computerScore = 0
@@ -60,6 +82,19 @@ function playRound(playerMove){
         document.getElementById("subheading").textContent="Draw!"
     }
 
+    if (playerScore >= 5 || computerScore >= 5){
+        modal.style.display = 'flex';
+        modalContent.style.display = "none";
+        endScreen.style.display = "block";
+
+        if (playerScore >= 5){
+            endScreenText.textContent = "You win! You saved the Earth. The Evil Computer will now die, and you can play another round against his evil twin."
+        } else {
+            endScreenText.textContent = "You lose. Everyone you love will perish. Wop wop."
+        }
+    }
+
+
     document.getElementById("player-img").src=imageDict[playerMove];
     document.getElementById("computer-img").src=imageDict[computerMove];
 
@@ -101,9 +136,5 @@ allButtons.forEach(button => {
 });
 
 
-let X = document.getElementById("close-modal");
-let modal = document.getElementById("modal-bg");
-X.addEventListener("click", function() {
-    modal.style.display = 'none';
-});
+
 

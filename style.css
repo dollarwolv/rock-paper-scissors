@@ -135,3 +135,16 @@ button:active {
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
 }
+
+#end-screen {
+    background-color: white;
+    display: none;
+    color: black;
+    z-index: 2;
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    position: relative;
+    border-radius: 30px;
+}
